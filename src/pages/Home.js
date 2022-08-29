@@ -9,9 +9,9 @@ const Home = () => {
             <h1>CHEMICAL ELEMENT SEARCH</h1>
             <span className="directions">Pick a level:</span>
             <div className="home-level">
-            <Link to={'/easy-chemistry'}><div className="level-item">Easy</div></Link>
+            <Link to={'/chemical-elements/easy-chemistry'}><div className="level-item">Easy</div></Link>
             
-            <Link to={'/hard-chemistry'}><div className="level-item">Hard</div></Link>
+            <Link to={'/chemical-elements/hard-chemistry'}><div className="level-item">Hard</div></Link>
             </div>
         </div>  
         )

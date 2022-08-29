@@ -64,7 +64,7 @@ const Leaderboard = () => {
                 )
             })}
             </div>  
-            <Link to='/'><button type='button' className='play-again'>Play Again</button></Link>
+            <Link to='/chemical-elements/'><button type='button' className='play-again'>Play Again</button></Link>
         </div>
     )
 } 
