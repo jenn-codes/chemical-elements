@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
 
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route exact path="/easy-chemistry" element={ <Chemistry difficulty={easy} /> } />
           <Route exact path="/hard-chemistry" element={ <Chemistry difficulty={hard} /> } />
