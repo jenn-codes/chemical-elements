@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/chemical-elements/static/css/main.2a2997a1.css",
-    "main.js": "/chemical-elements/static/js/main.34f2ff0f.js",
+    "main.js": "/chemical-elements/static/js/main.a2b61134.js",
     "static/media/chemistry-bg.jpg": "/chemical-elements/static/media/chemistry-bg.3e45f862e2d1a6f89953.jpg",
     "static/media/periodic-table.jpg": "/chemical-elements/static/media/periodic-table.19444c90c2cd47dfb767.jpg",
     "static/media/bg.jpg": "/chemical-elements/static/media/bg.66762dc2df584f7b5fbc.jpg",
     "index.html": "/chemical-elements/index.html",
     "main.2a2997a1.css.map": "/chemical-elements/static/css/main.2a2997a1.css.map",
-    "main.34f2ff0f.js.map": "/chemical-elements/static/js/main.34f2ff0f.js.map"
+    "main.a2b61134.js.map": "/chemical-elements/static/js/main.a2b61134.js.map"
   },
   "entrypoints": [
     "static/css/main.2a2997a1.css",
-    "static/js/main.34f2ff0f.js"
+    "static/js/main.a2b61134.js"
   ]
 }
