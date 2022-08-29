@@ -1,5 +1,5 @@
 name: Set environment variables
-on: [pull_request, push]
+on: [push]
 env:
     REACT_APP_API_KEY: ${{ secrets.API_KEY }}
     REACT_APP_AUTH_DOMAIN: ${{ secrets.AUTH_DOMAIN }}
@@ -8,3 +8,9 @@ env:
     REACT_APP_SENDER_ID: ${{ secrets.SENDER_ID }}
     REACT_APP_APP_ID: ${{ secrets.APP_ID }}
 
+jobs:
+  basic:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
