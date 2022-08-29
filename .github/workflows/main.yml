@@ -19,3 +19,14 @@ jobs:
         run: |
           echo ${{ secrets.API_KEY }}
           echo "REACT_APP_API_KEY=${{ secrets.API_KEY }}"
+          echo ${{ secrets.AUTH_DOMAIN }}
+          echo "REACT_APP_AUTH_DOMAIN=${{ secrets.AUTH_DOMAIN }}"
+          echo ${{ secrets.PROJECT_ID }}
+          echo "REACT_APP_PROJECT_ID=${{ secrets.PROJECT_ID }}"
+          echo ${{ secrets.STORAGE_BUCKET }}
+          echo "REACT_APP_STORAGE_BUCKET=${{ secrets.STORAGE_BUCKET }}"
+          
+          echo ${{ secrets.SENDER_ID }}
+          echo "REACT_APP_SENDER_ID=${{ secrets.SENDER_ID }}"
+          echo ${{ secrets.APP_ID }}
+          echo "REACT_APP_APP_ID=${{ secrets.APP_ID }}"
