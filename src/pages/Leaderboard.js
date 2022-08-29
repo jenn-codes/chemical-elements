@@ -47,10 +47,6 @@ const Leaderboard = () => {
     const secondsToMinutes = seconds => Math.floor(seconds / 60) + ':' + ('0' + Math.floor(seconds % 60)).slice(-2);
 
     
-<<<<<<< HEAD
-
-=======
->>>>>>> 4306d88 (fix: set process environment variable)
     return (
         <div>
             <h1>CHEMICAL ELEMENT SEARCH</h1>
