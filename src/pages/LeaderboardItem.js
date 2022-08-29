@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import '../styles/Leaderboard.css';
 import AvatarMan from '../assets/man.png'
 import AvatarWoman from '../assets/woman.png'
 import AvatarAnon from '../assets/user.png'
-
 
 
 const LeaderboardItem = ({name, time, rank}) => {
