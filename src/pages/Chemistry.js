@@ -7,11 +7,9 @@ import '../styles/Chemistry.css';
 
 
 
-
-
 const Chemistry = ({difficulty}) => {
 
-    let elementMap = difficulty.slice(0,2);
+    let elementMap = difficulty;
 
     const [showElements, setShowElements] = useState(false);  
     const [xPos, setXPos] = useState(); 
