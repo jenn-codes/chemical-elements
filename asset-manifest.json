@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/jenn-codes/chemical-elements.git/static/css/main.efa74272.css",
-    "main.js": "/jenn-codes/chemical-elements.git/static/js/main.196e1a0e.js",
-    "static/media/chemistry-bg.jpg": "/jenn-codes/chemical-elements.git/static/media/chemistry-bg.3e45f862e2d1a6f89953.jpg",
-    "static/media/periodic-table.jpg": "/jenn-codes/chemical-elements.git/static/media/periodic-table.19444c90c2cd47dfb767.jpg",
-    "static/media/bg.jpg": "/jenn-codes/chemical-elements.git/static/media/bg.66762dc2df584f7b5fbc.jpg",
-    "index.html": "/jenn-codes/chemical-elements.git/index.html",
-    "main.efa74272.css.map": "/jenn-codes/chemical-elements.git/static/css/main.efa74272.css.map",
-    "main.196e1a0e.js.map": "/jenn-codes/chemical-elements.git/static/js/main.196e1a0e.js.map"
+    "main.css": "/chemical-elements/static/css/main.2a2997a1.css",
+    "main.js": "/chemical-elements/static/js/main.34f2ff0f.js",
+    "static/media/chemistry-bg.jpg": "/chemical-elements/static/media/chemistry-bg.3e45f862e2d1a6f89953.jpg",
+    "static/media/periodic-table.jpg": "/chemical-elements/static/media/periodic-table.19444c90c2cd47dfb767.jpg",
+    "static/media/bg.jpg": "/chemical-elements/static/media/bg.66762dc2df584f7b5fbc.jpg",
+    "index.html": "/chemical-elements/index.html",
+    "main.2a2997a1.css.map": "/chemical-elements/static/css/main.2a2997a1.css.map",
+    "main.34f2ff0f.js.map": "/chemical-elements/static/js/main.34f2ff0f.js.map"
   },
   "entrypoints": [
-    "static/css/main.efa74272.css",
-    "static/js/main.196e1a0e.js"
+    "static/css/main.2a2997a1.css",
+    "static/js/main.34f2ff0f.js"
   ]
 }
