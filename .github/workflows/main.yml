@@ -9,8 +9,13 @@ env:
     REACT_APP_APP_ID: ${{ secrets.APP_ID }}
 
 jobs:
-  basic:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
+  trying-to-use-environment-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Store variables
+        run: |
+          echo ${{ secrets.API_KEY }}
+          echo "REACT_APP_API_KEY=${{ secrets.API_KEY }}"
