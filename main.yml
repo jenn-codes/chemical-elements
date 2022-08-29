@@ -1,0 +1,9 @@
+name: Set environment variables
+  env:
+    REACT_APP_API_KEY: ${{ secrets.API_KEY }}
+    REACT_APP_AUTH_DOMAIN: ${{ secrets.APP_ID }}
+    REACT_APP_PROJECT_ID: ${{ secrets.AUTH_DOMAIN }}
+    REACT_APP_STORAGE_BUCKET: ${{ secrets.PROJECT_ID }}
+    REACT_APP_SENDER_ID: ${{ secrets.SENDER_ID }}
+    REACT_APP_APP_ID: ${{ secrets.STORAGE_BUCKET }}
+
