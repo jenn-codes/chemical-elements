@@ -46,6 +46,14 @@ const Chemistry = ({difficulty}) => {
     }
 
     useEffect(() => {
+        return () => {
+            const checks = document.querySelectorAll('.check');
+            checks.forEach(check => check.remove());
+        }
+    }, [])
+
+
+    useEffect(() => {
         document.querySelector('.status').style.opacity = 0;
         window.addEventListener('click', fadeIn);
         // eslint-disable-next-line
@@ -159,8 +167,7 @@ const Chemistry = ({difficulty}) => {
         let elapsedTime = timer;
         console.log(userName, elapsedTime);
         const checks = document.querySelectorAll('.check');
-        checks.forEach(check => check.remove())
-
+        checks.forEach(check => check.remove());
         const newHigh = {
             'Time': elapsedTime,
             'Name':  userName
@@ -192,8 +199,6 @@ const Chemistry = ({difficulty}) => {
                 </div>
             </div>
             <p className='status'>{status ? status : 'Find the elements listed in the right sidebar. Choose a spot in the periodic table to place each element.'}</p>
-
-
             
             <div className='content'>
             <div className='board'>
