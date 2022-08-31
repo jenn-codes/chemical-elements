@@ -8,7 +8,7 @@ import '../styles/Chemistry.css';
 
 const Chemistry = ({difficulty}) => {
 
-    let elementMap = difficulty.slice(0,2);
+    let elementMap = difficulty;
     const [showElements, setShowElements] = useState(false);  
     const [xPos, setXPos] = useState(); 
     const [yPos, setYPos] = useState();
@@ -51,18 +51,14 @@ const Chemistry = ({difficulty}) => {
             }
     }
 
-
+    // check that spot selected is one of the elements to be found
     const checkSpotMatch = (x,y) => {
-
         for (let i=0; i<elementMap.length; i++) {
             if (elementMap[i].x1 <= x && 
             elementMap[i].x2 >= x && 
             elementMap[i].y1 <= y && 
             elementMap[i].y2 >= y) {
-                
                 let elementFound = elementMap[i].name;
-                // console.log(elementFound);
-
                 setCurrElement(elementFound);
                 setShowElements(true);
                 return;
@@ -71,7 +67,7 @@ const Chemistry = ({difficulty}) => {
         setStatus('That\'s not one of the listed elements to be found.')
     }
 
-    // check that actual element is the one selected by user
+    // check that element selected is correct
     const checkElementMatch = (e) => {
         const selectedElement = e.target.textContent;
         if (selectedElement === currElement) {
@@ -88,7 +84,6 @@ const Chemistry = ({difficulty}) => {
         }
     }
 
-    
     const placeMarkerInBox = () => {
         const xStart = elementMap.filter((item) => item.name === currElement)[0].x1
         const yStart = elementMap.filter((item) => item.name === currElement)[0].y1
@@ -121,7 +116,6 @@ const Chemistry = ({difficulty}) => {
 
     const secondsToMinutes = seconds => Math.floor(seconds / 60) + ':' + ('0' + Math.floor(seconds % 60)).slice(-2);
     const formattedTimer = secondsToMinutes(timer);
-
     
     useEffect(() => {
         window.addEventListener('load', () => setInterval(show, 200));
@@ -201,13 +195,12 @@ const Chemistry = ({difficulty}) => {
                             <div className='element-item' key={item.name}>
                                 {item.name}
                             </div>
-                    )
+                        )
                     })}
                 </ul>
             </div>
             </div>
             </div>
-
             
             {isGameOver ?  
             <div className='modal'>

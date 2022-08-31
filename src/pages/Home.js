@@ -10,7 +10,6 @@ const Home = () => {
             <span className="directions">Pick a level:</span>
             <div className="home-level">
             <Link to={'/chemical-elements/easy-chemistry'}><div className="level-item">Easy</div></Link>
-            
             <Link to={'/chemical-elements/hard-chemistry'}><div className="level-item">Hard</div></Link>
             </div>
         </div>  

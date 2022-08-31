@@ -8,13 +8,8 @@ import Leaderboard from './pages/Leaderboard';
 
 
 function App() {
-
-
-
-
   let easy=elementMapEasy;
   let hard=elementMapHard;
-
 
   return (
     <div className="App">
@@ -25,14 +20,11 @@ function App() {
           <Route exact path="/chemical-elements/hard-chemistry" element={ <Chemistry difficulty={hard} /> } />
           <Route exact path="/chemical-elements/" element={ <Home/> } />
           <Route exact path="/chemical-elements/leaderboard" element={ <Leaderboard /> } />
-
-
         </Routes>
       </BrowserRouter>      
     </div>
   );
 }
-
 
 
 export default App;

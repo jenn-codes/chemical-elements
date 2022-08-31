@@ -8,7 +8,6 @@ body {
     background-position: contain;
 }
 
-
 .card {
     display: grid;
     grid-template-columns: 1fr 1fr 6fr 1fr;
@@ -25,32 +24,31 @@ body {
     margin-top: 3px;
   }
 
-  .card:hover {
-    background-color: rgba(53, 52, 52, 0.551);
-    
-  }
+.card:hover {
+  background-color: rgba(53, 52, 52, 0.551);
   
-  .user-name {
-    font-size: 1.2rem;
-  }
-   
-  h1, h2 {
-    color: gray;
-  }
+}
 
-  .avatar {
-    text-align: left;
-  }
+.user-name {
+  font-size: 1.2rem;
+}
+  
+h1, h2 {
+  color: gray;
+}
 
-  button {
-    width: 100px;
-    margin: auto;
-    padding: 7px;
-    text-transform: uppercase;
-    background-color: rgb(240, 241, 255);
-    border: 1px solid rgb(222, 223, 237);
-    box-shadow: 2px 2px gray;
-    margin-top: 15px;
-    color: blue;
+.avatar {
+  text-align: left;
+}
 
-  }
+button {
+  width: 100px;
+  margin: auto;
+  padding: 7px;
+  text-transform: uppercase;
+  background-color: rgb(240, 241, 255);
+  border: 1px solid rgb(222, 223, 237);
+  box-shadow: 2px 2px gray;
+  margin-top: 15px;
+  color: blue;
+}

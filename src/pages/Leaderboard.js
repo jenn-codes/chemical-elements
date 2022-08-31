@@ -40,10 +40,6 @@ const Leaderboard = () => {
         }
         // eslint-disable-next-line
     getData()}, []);
-        // console.log(leaderboardData);
-
-    console.log(db.collection("high-scores").orderBy("Time", "asc"));
-
     const secondsToMinutes = seconds => Math.floor(seconds / 60) + ':' + ('0' + Math.floor(seconds % 60)).slice(-2);
 
     
