@@ -2,7 +2,7 @@ import { db } from '../firebase';
 import React, {useState, useEffect} from 'react';
 import uniqid from 'uniqid';
 import '../styles/Leaderboard.css'
-import LeaderboardItem from './LeaderboardItem';
+import LeaderboardItem from '../components/LeaderboardItem';
 import '../styles/Leaderboard.css'
 import { Link } from 'react-router-dom';
 

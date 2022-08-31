@@ -161,46 +161,46 @@ const Chemistry = ({difficulty}) => {
             <div className='header'>
                 <h1>CHEMICAL ELEMENT SEARCH</h1>
                 <div className='stats'>
-                <span className='score'>Score: {score}</span>
-                <span className='timer'>Timer: {formattedTimer}</span>
+                    <span className='score'>Score: {score}</span>
+                    <span className='timer'>Timer: {formattedTimer}</span>
                 </div>
             </div>
             <p className='status'>{status ? status : 'Find the elements listed in the right sidebar. Choose a spot in the periodic table to place each element.'}</p>
             
             <div className='content'>
-            <div className='board'>
-            <div>
-                <img src={PeriodicTable} alt='periodic table' className='periodic-table'/>
-            </div>
-            <div ref={elementsList} className='message' style={{
-                position: 'absolute', 
-                top: `${yPos}px`, 
-                left: `${xPos}px`, 
-                zIndex: '100', 
-                visibility: showElements ? 'visible' : 'hidden' }}>
-                    <ul id='dropdown'>
-                    {elementsLeft.map((item) => {
-                        return (
-                            <li className='dropdown-item' value={item.name} key={item.name} onClick={checkElementMatch}>
-                                {item.name}
-                            </li>
-                        )
-                    })}
-                    </ul>
-            </div>
-            <div className='sidebar'>
-                <ul>Elements Remaining:
-                    {elementsLeft.map((item) => {
-                        return (
-                            <div className='element-item' key={item.name}>
-                                {item.name}
-                            </div>
-                        )
-                    })}
-                </ul>
-            </div>
-            </div>
-            </div>
+                <div className='board'>
+                    <div>
+                        <img src={PeriodicTable} alt='periodic table' className='periodic-table'/>
+                    </div>
+                    <div ref={elementsList} className='message' style={{
+                        position: 'absolute', 
+                        top: `${yPos}px`, 
+                        left: `${xPos}px`, 
+                        zIndex: '100', 
+                        visibility: showElements ? 'visible' : 'hidden' }}>
+                            <ul id='dropdown'>
+                            {elementsLeft.map((item) => {
+                                return (
+                                    <li className='dropdown-item' value={item.name} key={item.name} onClick={checkElementMatch}>
+                                        {item.name}
+                                    </li>
+                                )
+                            })}
+                            </ul>
+                    </div>
+                    <div className='sidebar'>
+                        <ul>Elements Remaining:
+                            {elementsLeft.map((item) => {
+                                return (
+                                    <div className='element-item' key={item.name}>
+                                        {item.name}
+                                    </div>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                </div>
+            </div>                          
             
             {isGameOver ?  
             <div className='modal'>
@@ -213,7 +213,6 @@ const Chemistry = ({difficulty}) => {
             </div> 
             : null }
         </div>
-
     )
 }
 

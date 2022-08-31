@@ -1,8 +1,8 @@
 import './App.css';
 import Chemistry from './pages/Chemistry';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { elementMapEasy } from './pages/ChemistryEasy';
-import { elementMapHard } from './pages/ChemistryHard';
+import { elementMapEasy } from './data/ChemistryEasy';
+import { elementMapHard } from './data/ChemistryHard';
 import Home from './pages/Home';
 import Leaderboard from './pages/Leaderboard';
 
