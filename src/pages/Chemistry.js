@@ -6,11 +6,9 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Chemistry.css';
 
 
-
 const Chemistry = ({difficulty}) => {
 
-    let elementMap = difficulty;
-
+    let elementMap = difficulty.slice(0,2);
     const [showElements, setShowElements] = useState(false);  
     const [xPos, setXPos] = useState(); 
     const [yPos, setYPos] = useState();
@@ -21,74 +19,22 @@ const Chemistry = ({difficulty}) => {
     const [elementsLeft, setElementsLeft] = useState(elementMap);
     const [currElement, setCurrElement] = useState('');
     const [isGameOver, setIsGameOver] = useState(false);
-    
     let opacity = 0;
 
-
-    function fadeIn() {
-        setInterval(show, 200);
-    }
-
-    function show() {
+    const show = () => {
         const status = document.querySelector('.status');
-        if (status) {
-            
+        if (status) {          
             opacity = parseFloat(window.getComputedStyle(status).getPropertyValue('opacity'))
-
             if (opacity < 1) {
                 opacity = opacity + 0.1;
                 status.style.opacity = opacity;
-
             } else if (opacity > 1) {
                 status.style.opacity = 1;
             }
         }
     }
 
-    useEffect(() => {
-        return () => {
-            const checks = document.querySelectorAll('.check');
-            checks.forEach(check => check.remove());
-        }
-    }, [])
-
-
-    useEffect(() => {
-        document.querySelector('.status').style.opacity = 0;
-        window.addEventListener('click', fadeIn);
-        // eslint-disable-next-line
-    }, [status])
-
-
-    useEffect(() => {
-        window.addEventListener('click', handleClick);
-        window.addEventListener('load', fadeIn);
-                    // eslint-disable-next-line
-        }, [])
-
-
-    useEffect(() => {
-        if (elementsLeft.length < 1) {
-            setIsGameOver(!isGameOver);
-            setStatus(`Wow! You found all the elements in ${timer} seconds.`);
-            document.querySelector('.timer').textContent = `Timer: ${timer}`;
-            // eslint-disable-next-line
-        }}, [timer]); 
-
-    useEffect(() => {
-        const myTimer = setInterval(() => {
-          if(!isGameOver) { //I used '!paused' because I set pause initially to false. 
-            setTimer(timer + 1);
-            }
-          
-        }, 1000);
-        return () => clearInterval(myTimer);
-      });
-
-
-
     const handleClick = () => {
-
         const img = document.querySelector('.periodic-table');
         if (img) {
             img.onclick = (e) => {
@@ -104,6 +50,7 @@ const Chemistry = ({difficulty}) => {
                 }
             }
     }
+
 
     const checkSpotMatch = (x,y) => {
 
@@ -160,14 +107,10 @@ const Chemistry = ({difficulty}) => {
     }
 
     const navigate = useNavigate();
-
-
     const handleSave = async () => {
         let userName = document.querySelector('.user-name').value;
         let elapsedTime = timer;
         console.log(userName, elapsedTime);
-        const checks = document.querySelectorAll('.check');
-        checks.forEach(check => check.remove());
         const newHigh = {
             'Time': elapsedTime,
             'Name':  userName
@@ -179,8 +122,11 @@ const Chemistry = ({difficulty}) => {
     const secondsToMinutes = seconds => Math.floor(seconds / 60) + ':' + ('0' + Math.floor(seconds % 60)).slice(-2);
     const formattedTimer = secondsToMinutes(timer);
 
-
+    
     useEffect(() => {
+        window.addEventListener('load', () => setInterval(show, 200));
+        window.addEventListener('click', handleClick);
+        window.addEventListener('click', () => setInterval(show, 200));
         document.addEventListener('click', (e) => {
             if (e.target.matches('.modal') || e.target.matches('.close-form')) {
                 document.querySelector('.modal').style.display = 'none';
@@ -188,6 +134,33 @@ const Chemistry = ({difficulty}) => {
         })
     })
 
+    useEffect(() => {
+        if (elementsLeft.length < 1) {
+            setIsGameOver(true);
+            setStatus(`Wow! You found all the elements in ${timer} seconds.`);
+            document.querySelector('.timer').textContent = `Timer: ${timer}`;
+        }}, [timer, elementsLeft, isGameOver]); 
+
+    useEffect(() => {
+        const myTimer = setInterval(() => {
+          if(!isGameOver) { 
+            setTimer(timer + 1);
+            }
+        }, 1000);
+        return () => clearInterval(myTimer);
+      }, [isGameOver, timer]);
+
+    useEffect(() => {
+        document.querySelector('.status').style.opacity = 0;
+    }, [status])
+
+    // clean up checkmarks
+    useEffect(() => {
+        return () => {
+            const checks = document.querySelectorAll('.check');
+            checks.forEach(check => check.remove());
+        }
+    }, [])
 
     return (
         <div className='main'>
