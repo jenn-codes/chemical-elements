@@ -208,7 +208,8 @@ const Chemistry = ({difficulty}) => {
             </div>
             </div>
 
-            {isGameOver && 
+            
+            {isGameOver ?  
             <div className='modal'>
                 <div className='form'>
                 <span className='close-form'>X</span>
@@ -216,7 +217,8 @@ const Chemistry = ({difficulty}) => {
                 <input type='text' className='user-name' placeholder='Enter your name'></input>
                 <button type='button' className='submit-button' onClick={handleSave}>Submit</button>
                 </div>
-            </div> }
+            </div> 
+            : null }
         </div>
 
     )
